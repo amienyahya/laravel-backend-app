@@ -16,9 +16,22 @@ class UserSeeder extends Seeder
     {
         User::factory(5)->create();
         User::Create([
-            'name'=>'Amien Yahya',
-            'email'=>'amienyahya@gmail.com',
-            'email_verified_at'=> now(),
+            'name' => 'Amien Yahya',
+            'email' => 'amienyahya@gmail.com',
+            'email_verified_at' => now(),
+            'role' => 'admin',
+            'phone' => '6285697889417',
+            'bio' => 'flutter dev',
+            'password' => Hash::make('123456'),
+        ]);
+
+        User::Create([
+            'name' => 'Admin Yahya',
+            'email' => 'adminyahya@gmail.com',
+            'email_verified_at' => now(),
+            'role' => 'superadmin',
+            'phone' => '6285697889411',
+            'bio' => 'laravel dev',
             'password' => Hash::make('123456'),
         ]);
     }
