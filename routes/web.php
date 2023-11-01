@@ -20,8 +20,12 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', function () {
-        return view('pages.blank-page', ['type_menu' => '']);
-    })->name('home');
+        return view('pages.dashboard', ['type_menu' => '']);
+    })->name('home')->middleware('can:dashboard');
+
+    Route::get('profile-edit', function () {
+        return view('pages.profile', ['type_menu' => '']);
+    })->name('profile.edit');
 });
 
 // Route::get('/login', function () {
