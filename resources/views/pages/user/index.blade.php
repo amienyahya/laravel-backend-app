@@ -79,7 +79,7 @@
                             <div class="float-right">
                                 <nav>
                                     <ul class="pagination">
-
+                                        {{$users -> links()}}
                                     </ul>
                                 </nav>
                             </div>
