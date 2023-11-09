@@ -61,6 +61,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return response (status:204);
+        return response(status: 204);
     }
 }
