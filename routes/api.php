@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\CategoryController;
-use App\Http\Controllers\Api\OrderController;
-use App\Http\Controllers\Api\ProductController;
-use App\Http\Controllers\Api\UploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\UploadController;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\CallbackController;
+use App\Http\Controllers\Api\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,9 @@ Route::post('image/upload-multiple', [UploadController::class, 'uploadMultipleIm
 
 Route::post('orders', [OrderController::class, 'order'])
     ->middleware('auth:sanctum');
+
+//====================callback=============================
+Route::post('midtrans/notification/handling', [CallbackController::class, 'callback']);
 
 //===================product category======================
 
